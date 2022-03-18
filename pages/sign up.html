@@ -71,6 +71,10 @@
                 <input id="email" type="email" placeholder="email" autocomplete="off" />
                 <legend><label for="email">email</label></legend>
             </fieldset>
+            <select id="role" type="text" placeholder="Role" autocomplete="off">
+                <option value="visitor">visitor</option>
+                <option value="admin">admin</option>
+            </select>
             <fieldset>
                 <input id="password" type="password" placeholder="password" autocomplete="off" />
                 <legend><label for="password">password</label></legend>
@@ -78,10 +82,6 @@
             <button type="submit"><a href="/pages/dashboard.html"></a>Sign Up</button>
         </form>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
-    <script src="../scripts/firebase.js"></script>
     <script src="../scripts/auth.js"></script>
 </body>
 

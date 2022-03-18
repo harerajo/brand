@@ -1,27 +1,29 @@
 /*
  @role register user
 */
-function addUser(e) {
+async function addUser(e) {
 	const email = document.getElementById("email").value;
 	const password = document.getElementById("password").value;
 	const name = document.getElementById("name").value;
-	auth
-		.createUserWithEmailAndPassword(email, password)
-		.then((userCredential) => {
-			const user = userCredential.user;
-			// alert("User created successfully")
-			saveUserProfile({ name, email });
-			// window.location.href = "./index.html";
+	const role = document.getElementById("role").value;
+
+	let error = null;
+	let url = "https://johhny-brand-staging.herokuapp.com/api";
+	await fetch(url + "/auth/signup", {
+		method: "POST",
+		headers: { "Content-type": "application/json; charset=UTF-8" },
+		body: JSON.stringify({ email, name, password, role }),
+	})
+		.then((res) => res.json())
+		.then((response) => {
+			console.log(response.error);
+			if (response.status !== 200) {
+				error = response.error;
+			}
 		})
-		.catch((error) => {
-			const errorCode = error.code;
-			const errorMessage = error.message;
-			alert("Error: " + errorMessage);
+		.catch((err) => {
+			console.log(err);
 		});
-}
-/*
- @role register user
-*/
 function loginUser() {
 	const email = document.getElementById("email").value;
 	const password = document.getElementById("password").value;
