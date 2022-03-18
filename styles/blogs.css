@@ -1,0 +1,50 @@
+.image {
+	padding-left: 10px;
+	border-radius: 19px;
+}
+.blog {
+	font-size: 350%;
+	margin-left: 10%;
+	padding-top: 8%;
+}
+.text {
+	text-align: justify;
+	padding: 50px;
+}
+p {
+	padding: 28px;
+	font-size: large;
+}
+.article {
+	padding-left: 08%;
+}
+.comment {
+	display: flex;
+	flex-direction: row;
+}
+.blog-end{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 50px;
+	gap: 10px;
+}
+.blogbtn{
+	height: 60px;
+	width: 204px;
+	border-radius: 10px;
+}
+
+textarea {
+	padding: 10px;
+	border-radius: 12px;
+}
+@media screen and (max-width:200px) {
+	img{
+		padding: 40px;
+		max-width: 300px;
+		/* height: 300px; */
+		margin-left: 30px;
+	}
+	
+}
